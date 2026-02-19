@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Leaders Club — Leadership Through Sports</title>
+<meta name="description" content="Program kepemimpinan untuk anak usia 8–16 tahun lewat olahraga. Setiap Sabtu di Galaxy Sports Center PIK2. / Leadership program for kids ages 8–16 through sports. Every Saturday at Galaxy Sports Center PIK2.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { 50:'#eff3ff', 100:'#dbe4ff', 600:'#2a4a9e', 700:'#1e3a8a', 800:'#172d6e', 900:'#111f4d' },
+        gold: { 300:'#fde68a', 400:'#fcd34d', 500:'#f59e0b', 600:'#d97706' }
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { font-family: 'Inter', sans-serif; }
+.hero-bg { background: linear-gradient(135deg, #111f4d 0%, #1e3a8a 50%, #172d6e 100%); }
+.card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+.fade-in { animation: fadeIn 0.6s ease-out both; }
+.slide-up { animation: slideUp 0.6s ease-out both; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes slideUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+.gold-badge { display:inline-block; background:rgba(252,211,77,0.15); border:1px solid rgba(252,211,77,0.4); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:600; letter-spacing:0.04em; color:#fcd34d; }
+.skill-icon { width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:14px; }
+.timeline-line { position:absolute; left:27px; top:60px; bottom:0; width:2px; background:linear-gradient(to bottom, #1e3a8a, #fcd34d); }
+.star { color:#f59e0b; }
+.pulse-ring { animation: pulseRing 2.5s ease-out infinite; }
+@keyframes pulseRing { 0% { box-shadow:0 0 0 0 rgba(252,211,77,0.6); } 70% { box-shadow:0 0 0 16px rgba(252,211,77,0); } 100% { box-shadow:0 0 0 0 rgba(252,211,77,0); } }
+.sticky-nav { position:sticky; top:0; z-index:50; background:rgba(17,31,77,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(252,211,77,0.15); }
+.lang-toggle { background: rgba(252,211,77,0.1); border: 1px solid rgba(252,211,77,0.3); color:#fcd34d; font-size:13px; font-weight:600; padding:6px 14px; border-radius:999px; cursor:pointer; transition:all 0.2s; }
+.lang-toggle:hover { background: rgba(252,211,77,0.2); }
+.cta-gold { background: linear-gradient(135deg, #fcd34d, #f59e0b); color:#111f4d; }
+.cta-gold:hover { background: linear-gradient(135deg, #fde68a, #fcd34d); }
+.section-alt { background: #f8f9fc; }
+[data-lang] { display: none; }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- NAV -->
+<nav class="sticky-nav px-4 py-3">
+  <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Team Leaders Club" class="w-10 h-10 object-contain">
+      <span class="font-bold text-white text-base hidden sm:block">Team Leaders Club</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <button onclick="toggleLang()" class="lang-toggle" id="langBtn">🇬🇧 EN</button>
+      <a href="https://wa.me/6285281136200?text=Halo%20TLC!%20Saya%20tertarik%20mendaftarkan%20anak%20saya." target="_blank"
+         class="cta-gold font-bold text-sm px-4 py-2 rounded-xl transition" id="navCta">
+        Daftar →
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg text-white px-4 pt-16 pb-20 overflow-hidden relative">
+  <div class="absolute inset-0 opacity-5" style="background-image:radial-gradient(circle at 20% 80%, #fcd34d, transparent 50%), radial-gradient(circle at 80% 20%, #fcd34d, transparent 40%);"></div>
+  <div class="max-w-3xl mx-auto text-center relative z-10 slide-up">
+    <!-- Logo in hero -->
+    <div class="flex justify-center mb-6">
+      <img src="logo.png" alt="Team Leaders Club" class="w-28 h-28 object-contain drop-shadow-2xl">
+    </div>
+
+    <!-- ID -->
+    <div data-lang="id">
+      <div class="gold-badge mb-6">⚽ Setiap Sabtu · Galaxy Sports Center PIK2</div>
+      <h1 class="text-4xl sm:text-5xl font-black leading-tight mb-6">
+        Anak Kamu Bisa Jadi<br>
+        <span style="background:linear-gradient(90deg,#fcd34d,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Pemimpin Sejati</span><br>
+        Lewat Olahraga
+      </h1>
+      <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        Program kepemimpinan seru untuk anak usia 8–16 tahun. Bukan kelas biasa — 2 jam bermain, berkompetisi, dan belajar memimpin tim di lapangan.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+        <a href="https://wa.me/6285281136200?text=Halo%20TLC!%20Saya%20tertarik%20mendaftarkan%20anak%20saya." target="_blank"
+           class="cta-gold font-bold px-7 py-4 rounded-2xl transition text-base pulse-ring inline-block">
+          Daftarkan Anak Saya →
+        </a>
+        <a href="#program" class="border border-gold-400/40 text-white font-semibold px-7 py-4 rounded-2xl hover:bg-white/10 transition text-base inline-block">
+          Lihat Program ↓
+        </a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
+        <div class="flex items-center gap-2"><span class="text-yellow-300 text-lg">⭐</span> Dipercaya 200+ orang tua</div>
+        <div class="flex items-center gap-2"><span class="text-green-300 text-lg">✓</span> Coach berpengalaman</div>
+        <div class="flex items-center gap-2"><span class="text-yellow-300 text-lg">🏆</span> Est. 2023</div>
+      </div>
+    </div>
+
+    <!-- EN -->
+    <div data-lang="en">
+      <div class="gold-badge mb-6">⚽ Every Saturday · Galaxy Sports Center PIK2</div>
+      <h1 class="text-4xl sm:text-5xl font-black leading-tight mb-6">
+        Your Child Can Become<br>
+        <span style="background:linear-gradient(90deg,#fcd34d,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">A True Leader</span><br>
+        Through Sports
+      </h1>
+      <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        A fun leadership program for kids ages 8–16. Not a regular class — 2 hours of playing, competing, and learning to lead a team on the field.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+        <a href="https://wa.me/6285281136200?text=Hi%20TLC!%20I%27m%20interested%20in%20enrolling%20my%20child." target="_blank"
+           class="cta-gold font-bold px-7 py-4 rounded-2xl transition text-base pulse-ring inline-block">
+          Enroll My Child →
+        </a>
+        <a href="#program" class="border border-gold-400/40 text-white font-semibold px-7 py-4 rounded-2xl hover:bg-white/10 transition text-base inline-block">
+          See the Program ↓
+        </a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
+        <div class="flex items-center gap-2"><span class="text-yellow-300 text-lg">⭐</span> Trusted by 200+ parents</div>
+        <div class="flex items-center gap-2"><span class="text-green-300 text-lg">✓</span> Experienced coaches</div>
+        <div class="flex items-center gap-2"><span class="text-yellow-300 text-lg">🏆</span> Est. 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="bg-navy-900 border-b border-yellow-400/20 py-6 px-4" style="background:#111f4d;">
+  <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-3xl font-black text-yellow-400">200+</div>
+      <div data-lang="id" class="text-sm text-blue-200 mt-1">Anak alumni</div>
+      <div data-lang="en" class="text-sm text-blue-200 mt-1">Alumni kids</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-yellow-400">2 Jam</div>
+      <div data-lang="id" class="text-sm text-blue-200 mt-1">Sesi intensif setiap Sabtu</div>
+      <div data-lang="en" class="text-sm text-blue-200 mt-1">Intensive session every Saturday</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-yellow-400">8–16</div>
+      <div data-lang="id" class="text-sm text-blue-200 mt-1">Tahun usia peserta</div>
+      <div data-lang="en" class="text-sm text-blue-200 mt-1">Years old, all welcome</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-yellow-400">4.9★</div>
+      <div data-lang="id" class="text-sm text-blue-200 mt-1">Rating dari orang tua</div>
+      <div data-lang="en" class="text-sm text-blue-200 mt-1">Parent rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="px-4 py-16 bg-white">
+  <div class="max-w-2xl mx-auto text-center">
+    <!-- ID -->
+    <div data-lang="id">
+      <p class="text-sm font-semibold text-navy-700 uppercase tracking-widest mb-3" style="color:#1e3a8a;">Orang tua sering bilang ke kami...</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-8 leading-snug">
+        "Anak saya pintar, tapi susah kalau harus kerja sama atau jadi pemimpin kelompok."
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-4 text-left">
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😓</div>
+          <p class="text-sm text-gray-700 font-medium">"Anak saya cenderung diam dan ikut-ikutan temannya"</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😤</div>
+          <p class="text-sm text-gray-700 font-medium">"Kalau ada konflik sama teman, langsung emosi dan tidak bisa handle"</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😟</div>
+          <p class="text-sm text-gray-700 font-medium">"Kurang percaya diri ngomong di depan orang atau memimpin kelompok"</p>
+        </div>
+      </div>
+      <p class="text-gray-500 mt-8 text-base">Team Leaders Club hadir untuk mengubah itu — dengan cara yang anak-anak benar-benar enjoy.</p>
+    </div>
+    <!-- EN -->
+    <div data-lang="en">
+      <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#1e3a8a;">Parents often tell us...</p>
+      <h2 class="text-3xl font-black text-gray-900 mb-8 leading-snug">
+        "My child is smart, but struggles with teamwork or stepping up as a leader."
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-4 text-left">
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😓</div>
+          <p class="text-sm text-gray-700 font-medium">"My child tends to be quiet and just goes along with others"</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😤</div>
+          <p class="text-sm text-gray-700 font-medium">"When there's a conflict with friends, they get emotional and can't handle it"</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div class="text-2xl mb-2">😟</div>
+          <p class="text-sm text-gray-700 font-medium">"Not confident speaking in front of others or leading a group"</p>
+        </div>
+      </div>
+      <p class="text-gray-500 mt-8 text-base">Team Leaders Club is here to change that — in a way kids genuinely love.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="program" style="background:#1e3a8a;" class="text-white px-4 py-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <!-- ID -->
+      <div data-lang="id">
+        <p class="text-yellow-300 text-sm font-semibold uppercase tracking-widest mb-3">Yang anak kamu pelajari</p>
+        <h2 class="text-3xl font-black mb-4">6 Skill Kepemimpinan yang Bertahan Seumur Hidup</h2>
+        <p class="text-blue-200 max-w-xl mx-auto">Setiap sesi dirancang agar anak belajar lewat pengalaman nyata — bukan ceramah, tapi action.</p>
+      </div>
+      <!-- EN -->
+      <div data-lang="en">
+        <p class="text-yellow-300 text-sm font-semibold uppercase tracking-widest mb-3">What your child will learn</p>
+        <h2 class="text-3xl font-black mb-4">6 Leadership Skills That Last a Lifetime</h2>
+        <p class="text-blue-200 max-w-xl mx-auto">Every session is designed so kids learn through real experience — not lectures, but action.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Skill 1 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">🎯</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Pengambilan Keputusan</h3><p class="text-blue-100 text-sm leading-relaxed">Anak belajar membuat keputusan cepat dan tepat saat tim membutuhkan arah.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Decision Making</h3><p class="text-blue-100 text-sm leading-relaxed">Kids learn to make quick, smart decisions when their team needs direction.</p></div>
+      </div>
+      <!-- Skill 2 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">🤝</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Kerja Tim</h3><p class="text-blue-100 text-sm leading-relaxed">Bagaimana mengandalkan dan dipercaya teman — bukan hanya menang sendiri.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Teamwork</h3><p class="text-blue-100 text-sm leading-relaxed">How to rely on teammates and be relied upon — winning together, not alone.</p></div>
+      </div>
+      <!-- Skill 3 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">💬</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Komunikasi Efektif</h3><p class="text-blue-100 text-sm leading-relaxed">Berbicara jelas, memberi instruksi, dan mendengarkan dalam situasi tekanan tinggi.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Effective Communication</h3><p class="text-blue-100 text-sm leading-relaxed">Speaking clearly, giving instructions, and listening under pressure.</p></div>
+      </div>
+      <!-- Skill 4 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">🧠</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Problem Solving</h3><p class="text-blue-100 text-sm leading-relaxed">Menghadapi situasi sulit dan menemukan solusi kreatif bersama tim.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Problem Solving</h3><p class="text-blue-100 text-sm leading-relaxed">Tackling tough situations and finding creative solutions together as a team.</p></div>
+      </div>
+      <!-- Skill 5 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">💪</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Ketangguhan Mental</h3><p class="text-blue-100 text-sm leading-relaxed">Bangkit dari kekalahan, tetap fokus saat tekanan, dan tidak mudah menyerah.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Mental Toughness</h3><p class="text-blue-100 text-sm leading-relaxed">Bouncing back from defeat, staying focused under pressure, never giving up.</p></div>
+      </div>
+      <!-- Skill 6 -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 card-hover border border-white/10">
+        <div class="skill-icon bg-yellow-400/20">🌟</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Kepercayaan Diri</h3><p class="text-blue-100 text-sm leading-relaxed">Berani tampil, bersuara, dan memimpin — di lapangan maupun di kehidupan sehari-hari.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Self-Confidence</h3><p class="text-blue-100 text-sm leading-relaxed">Courage to show up, speak out, and lead — on the field and in everyday life.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION TIMELINE -->
+<section class="px-4 py-16 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <!-- ID -->
+      <div data-lang="id">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#1e3a8a;">Satu sesi penuh manfaat</p>
+        <h2 class="text-3xl font-black text-gray-900">Seperti Apa Sesi Sabtu Anak Kamu?</h2>
+      </div>
+      <!-- EN -->
+      <div data-lang="en">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#1e3a8a;">One session, full of value</p>
+        <h2 class="text-3xl font-black text-gray-900">What Does Your Child's Saturday Look Like?</h2>
+      </div>
+    </div>
+    <div class="space-y-6 relative">
+      <div class="timeline-line"></div>
+      <!-- Step 1 -->
+      <div class="flex gap-5 items-start">
+        <div class="w-14 h-14 text-white rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 relative z-10" style="background:#1e3a8a;">1</div>
+        <div class="bg-gray-50 rounded-2xl p-5 flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-bold" style="color:#1e3a8a;">14:00 – 14:15</span>
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">Warm-up</span>
+          </div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Energizer & Briefing Tim</h3><p class="text-gray-500 text-sm">Anak-anak dikumpulkan, dibagi tim, dan diberi tantangan hari ini. Coach membangun semangat dan fokus.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Energizer & Team Briefing</h3><p class="text-gray-500 text-sm">Kids gather, get split into teams, and receive today's challenge. The coach builds excitement and focus.</p></div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="flex gap-5 items-start">
+        <div class="w-14 h-14 text-white rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 relative z-10" style="background:#1e3a8a;">2</div>
+        <div class="bg-gray-50 rounded-2xl p-5 flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-bold" style="color:#1e3a8a;">14:15 – 15:30</span>
+            <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-semibold">Main Session</span>
+          </div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Kompetisi & Leadership Challenges</h3><p class="text-gray-500 text-sm">Sesi utama: game dan olahraga yang dirancang untuk memunculkan kepemimpinan alami anak. Setiap anak bergiliran jadi kapten tim.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Competition & Leadership Challenges</h3><p class="text-gray-500 text-sm">The main session: games and sports designed to draw out each child's natural leadership. Every child takes turns as team captain.</p></div>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="flex gap-5 items-start">
+        <div class="w-14 h-14 text-white rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 relative z-10" style="background:#1e3a8a;">3</div>
+        <div class="bg-gray-50 rounded-2xl p-5 flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-bold" style="color:#1e3a8a;">15:30 – 15:50</span>
+            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Debrief</span>
+          </div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Refleksi & Feedback</h3><p class="text-gray-500 text-sm">Coach membimbing anak-anak merefleksikan apa yang terjadi di lapangan — menghubungkan pengalaman dengan pelajaran kepemimpinan nyata.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Reflection & Feedback</h3><p class="text-gray-500 text-sm">The coach guides kids to reflect on what happened on the field — connecting the experience to real leadership lessons.</p></div>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="flex gap-5 items-start">
+        <div class="w-14 h-14 bg-green-500 text-white rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 relative z-10">✓</div>
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-5 flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-bold text-green-600">15:50 – 16:00</span>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold">Closing</span>
+          </div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Penghargaan & Recap untuk Orang Tua</h3><p class="text-gray-500 text-sm">Anak-anak mendapat apresiasi, dan orang tua menerima ringkasan singkat perkembangan anak via WhatsApp.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Awards & Parent Recap</h3><p class="text-gray-500 text-sm">Kids receive recognition, and parents get a brief progress summary sent via WhatsApp.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="section-alt px-4 py-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <!-- ID -->
+      <div data-lang="id"><h2 class="text-3xl font-black text-gray-900 mb-3">Program Ini Untuk Siapa?</h2><p class="text-gray-500">Team Leaders Club cocok untuk berbagai tipe anak</p></div>
+      <!-- EN -->
+      <div data-lang="en"><h2 class="text-3xl font-black text-gray-900 mb-3">Who Is This Program For?</h2><p class="text-gray-500">Team Leaders Club works for all types of kids</p></div>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-white rounded-2xl p-6 border border-gray-200 card-hover flex gap-4">
+        <div class="text-4xl">🤫</div>
+        <div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Anak yang Pemalu / Introvert</h3><p class="text-gray-500 text-sm">Lingkungan yang aman dan supportif membantu mereka menemukan keberanian untuk bersuara dan memimpin.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Shy or Introverted Kids</h3><p class="text-gray-500 text-sm">A safe, supportive environment helps them find the courage to speak up and lead.</p></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-200 card-hover flex gap-4">
+        <div class="text-4xl">⚡</div>
+        <div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Anak yang Energik & Aktif</h3><p class="text-gray-500 text-sm">Energinya disalurkan ke hal positif — belajar mengontrol emosi dan mengarahkan tim dengan bijak.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Energetic & Active Kids</h3><p class="text-gray-500 text-sm">Their energy gets channelled positively — learning to control emotions and guide a team wisely.</p></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-200 card-hover flex gap-4">
+        <div class="text-4xl">📚</div>
+        <div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Anak Akademis tapi Kurang Sosial</h3><p class="text-gray-500 text-sm">Melengkapi prestasi akademik dengan kecerdasan sosial dan kemampuan berkolaborasi yang kuat.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Academic Kids Lacking Social Skills</h3><p class="text-gray-500 text-sm">Complementing academic achievement with strong social intelligence and collaboration skills.</p></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-200 card-hover flex gap-4">
+        <div class="text-4xl">🏆</div>
+        <div>
+          <div data-lang="id"><h3 class="font-bold text-gray-900 mb-1">Anak yang Suka Kompetisi</h3><p class="text-gray-500 text-sm">Belajar bahwa menang yang sejati adalah ketika seluruh tim berhasil bersama — bukan hanya diri sendiri.</p></div>
+          <div data-lang="en"><h3 class="font-bold text-gray-900 mb-1">Competitive Kids</h3><p class="text-gray-500 text-sm">Learning that true winning is when the whole team succeeds together — not just yourself.</p></div>
+        </div>
+      </div>
+    </div>
+    <div data-lang="id"><p class="text-center text-gray-500 mt-6 text-sm">Usia 8–16 tahun. Semua level welcome — tidak perlu pengalaman olahraga khusus.</p></div>
+    <div data-lang="en"><p class="text-center text-gray-500 mt-6 text-sm">Ages 8–16. All levels welcome — no special sports experience required.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="px-4 py-16 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <!-- ID -->
+      <div data-lang="id">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#1e3a8a;">Kata orang tua</p>
+        <h2 class="text-3xl font-black text-gray-900">Yang Orang Tua Rasakan Setelah 1 Bulan</h2>
+      </div>
+      <!-- EN -->
+      <div data-lang="en">
+        <p class="text-sm font-semibold uppercase tracking-widest mb-3" style="color:#1e3a8a;">What parents say</p>
+        <h2 class="text-3xl font-black text-gray-900">What Parents Notice After Just 1 Month</h2>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="bg-gray-50 rounded-2xl p-6 card-hover border border-gray-100">
+        <div class="flex gap-0.5 mb-3 star text-lg">★★★★★</div>
+        <div data-lang="id"><p class="text-gray-700 text-sm leading-relaxed mb-4">"Anak saya dulu tidak pernah mau jadi ketua kelompok. Setelah 3 bulan di TLC, gurunya sendiri yang cerita ke saya kalau dia jadi lebih percaya diri memimpin."</p></div>
+        <div data-lang="en"><p class="text-gray-700 text-sm leading-relaxed mb-4">"My child never wanted to be group leader before. After 3 months at TLC, his teacher told me he had become much more confident leading."</p></div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-700">S</div>
+          <div>
+            <p class="font-semibold text-sm text-gray-900">Sandra W.</p>
+            <div data-lang="id"><p class="text-xs text-gray-500">Ibu dari Kevin, 11 tahun</p></div>
+            <div data-lang="en"><p class="text-xs text-gray-500">Kevin's mom, age 11</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 card-hover border border-gray-100">
+        <div class="flex gap-0.5 mb-3 star text-lg">★★★★★</div>
+        <div data-lang="id"><p class="text-gray-700 text-sm leading-relaxed mb-4">"Yang paling saya suka, setiap minggu ada update dari coach soal perkembangan anak. Jadi saya bisa follow up di rumah juga. Bukan sekadar dititip main."</p></div>
+        <div data-lang="en"><p class="text-gray-700 text-sm leading-relaxed mb-4">"What I love most is getting a weekly update from the coach about my child's progress. I can follow up at home too. It's not just drop-off play time."</p></div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center font-bold text-yellow-700">R</div>
+          <div>
+            <p class="font-semibold text-sm text-gray-900">Reza P.</p>
+            <div data-lang="id"><p class="text-xs text-gray-500">Ayah dari Mia, 13 tahun</p></div>
+            <div data-lang="en"><p class="text-xs text-gray-500">Mia's dad, age 13</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 card-hover border border-gray-100">
+        <div class="flex gap-0.5 mb-3 star text-lg">★★★★★</div>
+        <div data-lang="id"><p class="text-gray-700 text-sm leading-relaxed mb-4">"Anak saya yang tadinya sering ngambek kalau timnya kalah, sekarang justru dia yang ngajak teman-temannya evaluasi bersama. Luar biasa perubahannya!"</p></div>
+        <div data-lang="en"><p class="text-gray-700 text-sm leading-relaxed mb-4">"My child used to throw a fit whenever his team lost. Now he's the one encouraging teammates to evaluate together afterwards. Incredible transformation!"</p></div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-700">D</div>
+          <div>
+            <p class="font-semibold text-sm text-gray-900">Dewi A.</p>
+            <div data-lang="id"><p class="text-xs text-gray-500">Ibu dari Raihan, 10 tahun</p></div>
+            <div data-lang="en"><p class="text-xs text-gray-500">Raihan's mom, age 10</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO SECTION -->
+<section style="background:#1e3a8a;" class="text-white px-4 py-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <div data-lang="id"><h2 class="text-3xl font-black mb-3">Info Lengkap Program</h2></div>
+      <div data-lang="en"><h2 class="text-3xl font-black mb-3">Program Details</h2></div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-center border border-white/10">
+        <div class="text-4xl mb-3">📅</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Jadwal</h3><p class="text-yellow-300 font-semibold">Setiap Sabtu</p><p class="text-blue-200 text-sm">Pukul 14:00 – 16:00 WIB</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Schedule</h3><p class="text-yellow-300 font-semibold">Every Saturday</p><p class="text-blue-200 text-sm">2:00 PM – 4:00 PM WIB</p></div>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-center border border-white/10">
+        <div class="text-4xl mb-3">📍</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Lokasi</h3><p class="text-yellow-300 font-semibold">Galaxy Sports Center</p><p class="text-blue-200 text-sm">PIK2, Jakarta Utara</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Location</h3><p class="text-yellow-300 font-semibold">Galaxy Sports Center</p><p class="text-blue-200 text-sm">PIK2, North Jakarta</p></div>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-center border border-white/10">
+        <div class="text-4xl mb-3">👦</div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-2">Usia Peserta</h3><p class="text-yellow-300 font-semibold">8 – 16 Tahun</p><p class="text-blue-200 text-sm">Semua level, semua cabang olahraga</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-2">Ages</h3><p class="text-yellow-300 font-semibold">8 – 16 Years Old</p><p class="text-blue-200 text-sm">All levels, all sports backgrounds</p></div>
+      </div>
+    </div>
+    <div class="bg-white/10 backdrop-blur rounded-2xl p-6 mt-6 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left border border-white/10">
+      <img src="logo.png" alt="TLC" class="w-20 h-20 object-contain flex-shrink-0">
+      <div>
+        <div data-lang="id"><h3 class="font-bold text-lg mb-1 text-yellow-300">Never Give Up — Dipimpin Coach Berpengalaman</h3><p class="text-blue-100 text-sm leading-relaxed">Coach kami memiliki latar belakang di bidang olahraga dan pengembangan anak. Rasio coach : anak dijaga agar setiap anak mendapat perhatian penuh.</p></div>
+        <div data-lang="en"><h3 class="font-bold text-lg mb-1 text-yellow-300">Never Give Up — Led by Experienced Coaches</h3><p class="text-blue-100 text-sm leading-relaxed">Our coaches have backgrounds in sports and child development. We maintain a low coach-to-child ratio so every child gets real attention.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="px-4 py-16 bg-white">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10">
+      <div data-lang="id"><h2 class="text-3xl font-black text-gray-900 mb-3">Pertanyaan yang Sering Ditanyakan</h2></div>
+      <div data-lang="en"><h2 class="text-3xl font-black text-gray-900 mb-3">Frequently Asked Questions</h2></div>
+    </div>
+    <div class="space-y-3" id="faqList">
+
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+          <div data-lang="id">Anak saya sama sekali tidak bisa olahraga, apakah bisa ikut?</div>
+          <div data-lang="en">My child is not athletic at all — can they still join?</div>
+          <span class="faq-icon font-bold text-xl flex-shrink-0 ml-2" style="color:#1e3a8a;">+</span>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+          <div data-lang="id">Sangat bisa! Program ini bukan tentang kemampuan atletik, tapi tentang kepemimpinan. Olahraga hanyalah medianya. Anak-anak dengan berbagai kemampuan fisik sudah berhasil berkembang di sini.</div>
+          <div data-lang="en">Absolutely! This program is about leadership, not athletic ability. Sports is just the medium. Kids of all physical abilities have thrived here.</div>
+        </div>
+      </div>
+
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+          <div data-lang="id">Bagaimana saya tahu anak saya berkembang?</div>
+          <div data-lang="en">How will I know if my child is progressing?</div>
+          <span class="faq-icon font-bold text-xl flex-shrink-0 ml-2" style="color:#1e3a8a;">+</span>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+          <div data-lang="id">Setelah setiap sesi, coach mengirim ringkasan perkembangan anak via WhatsApp. Setiap bulan ada evaluasi progress yang lebih detail — sehingga orang tua selalu tahu apa yang sedang dikembangkan.</div>
+          <div data-lang="en">After every session, the coach sends a progress summary via WhatsApp. Every month there's a more detailed progress review — so parents always know what's being developed.</div>
+        </div>
+      </div>
+
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+          <div data-lang="id">Berapa biaya program ini?</div>
+          <div data-lang="en">How much does the program cost?</div>
+          <span class="faq-icon font-bold text-xl flex-shrink-0 ml-2" style="color:#1e3a8a;">+</span>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+          <div data-lang="id">Info biaya tergantung paket dan ketersediaan. Hubungi kami via WhatsApp untuk mendapatkan info harga terbaru dan cek ketersediaan slot. Kami sering membuka trial session untuk pendaftar baru.</div>
+          <div data-lang="en">Pricing depends on the package and availability. Contact us on WhatsApp for the latest pricing and to check slot availability. We often run trial sessions for new joiners.</div>
+        </div>
+      </div>
+
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+          <div data-lang="id">Apakah ada sesi coba gratis?</div>
+          <div data-lang="en">Is there a free trial session?</div>
+          <span class="faq-icon font-bold text-xl flex-shrink-0 ml-2" style="color:#1e3a8a;">+</span>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+          <div data-lang="id">Ya! Kami membuka trial session terbatas agar anak dan orang tua bisa merasakan langsung sebelum mendaftar penuh. Chat kami di WhatsApp untuk info jadwal trial terdekat.</div>
+          <div data-lang="en">Yes! We offer limited trial sessions so kids and parents can experience it firsthand before committing. Chat us on WhatsApp for the next available trial date.</div>
+        </div>
+      </div>
+
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+          <div data-lang="id">Apakah aman? Ada pengawasan dari orang dewasa?</div>
+          <div data-lang="en">Is it safe? Are there adult supervisors?</div>
+          <span class="faq-icon font-bold text-xl flex-shrink-0 ml-2" style="color:#1e3a8a;">+</span>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+          <div data-lang="id">Keamanan anak adalah prioritas utama kami. Seluruh sesi diawasi langsung oleh coach berpengalaman di dalam fasilitas Galaxy Sports Center PIK2 yang sudah terstandarisasi. Orang tua boleh menunggu di area yang tersedia.</div>
+          <div data-lang="en">Child safety is our top priority. All sessions are directly supervised by experienced coaches inside the standardised Galaxy Sports Center PIK2 facility. Parents are welcome to wait in the designated waiting area.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="background:#111f4d;" class="text-white px-4 py-20 text-center">
+  <div class="max-w-xl mx-auto">
+    <img src="logo.png" alt="TLC" class="w-24 h-24 object-contain mx-auto mb-6">
+    <!-- ID -->
+    <div data-lang="id">
+      <h2 class="text-3xl font-black mb-4 leading-snug">Investasi Terbaik untuk<br>Masa Depan Anak Kamu</h2>
+      <p class="text-blue-300 mb-8 text-base leading-relaxed">Kepemimpinan bukan bakat lahir — itu skill yang bisa dipelajari. Dan semakin dini anak mulai, semakin kuat fondasinya.</p>
+      <a href="https://wa.me/6285281136200?text=Halo%20TLC!%20Saya%20ingin%20info%20lebih%20lanjut%20dan%20mendaftarkan%20anak%20saya." target="_blank"
+         class="inline-block cta-gold font-bold text-lg px-8 py-4 rounded-2xl transition mb-3 pulse-ring">
+        💬 Chat WhatsApp Sekarang
+      </a>
+      <p class="text-blue-400 text-sm">Biasanya kami membalas dalam &lt; 1 jam</p>
+    </div>
+    <!-- EN -->
+    <div data-lang="en">
+      <h2 class="text-3xl font-black mb-4 leading-snug">The Best Investment in<br>Your Child's Future</h2>
+      <p class="text-blue-300 mb-8 text-base leading-relaxed">Leadership isn't a natural talent — it's a skill that can be learned. And the earlier kids start, the stronger the foundation.</p>
+      <a href="https://wa.me/6285281136200?text=Hi%20TLC!%20I%27d%20like%20more%20info%20and%20to%20enroll%20my%20child." target="_blank"
+         class="inline-block cta-gold font-bold text-lg px-8 py-4 rounded-2xl transition mb-3 pulse-ring">
+        💬 Chat on WhatsApp Now
+      </a>
+      <p class="text-blue-400 text-sm">We usually reply within 1 hour</p>
+    </div>
+    <p class="text-blue-500 text-sm mt-4">
+      <a href="https://instagram.com/teamleadersclub" target="_blank" class="hover:text-yellow-400 transition">📸 @teamleadersclub</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0b1535;" class="text-gray-500 px-4 py-8 text-center text-sm">
+  <div class="flex justify-center mb-3">
+    <img src="logo.png" alt="TLC" class="w-12 h-12 object-contain opacity-70">
+  </div>
+  <p class="font-semibold text-gray-300 mb-1">Team Leaders Club — Never Give Up</p>
+  <div data-lang="id"><p>Galaxy Sports Center PIK2, Jakarta Utara · Setiap Sabtu 14:00 – 16:00</p></div>
+  <div data-lang="en"><p>Galaxy Sports Center PIK2, North Jakarta · Every Saturday 2:00 – 4:00 PM</p></div>
+  <p class="mt-2">
+    📞 <a href="tel:085281136200" class="hover:text-white transition">085281136200</a> ·
+    📸 <a href="https://instagram.com/teamleadersclub" target="_blank" class="hover:text-white transition">@teamleadersclub</a>
+  </p>
+  <p class="mt-4 text-gray-700">© 2025 Team Leaders Club. All rights reserved.</p>
+</footer>
+
+<script>
+let lang = 'id';
+
+function applyLang() {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+  });
+  document.getElementById('langBtn').textContent = lang === 'id' ? '🇬🇧 EN' : '🇮🇩 ID';
+  document.getElementById('navCta').textContent = lang === 'id' ? 'Daftar →' : 'Enroll →';
+  document.documentElement.lang = lang;
+}
+
+function toggleLang() {
+  lang = lang === 'id' ? 'en' : 'id';
+  applyLang();
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const icon = btn.querySelector('.faq-icon');
+  const isOpen = !body.classList.contains('hidden');
+  document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+  if (!isOpen) { body.classList.remove('hidden'); icon.textContent = '−'; }
+}
+
+// Scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.card-hover').forEach(el => {
+  el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// Init
+applyLang();
+</script>
+</body>
+</html>
