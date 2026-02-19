@@ -41,7 +41,7 @@ tailwind.config = {
 .cta-gold { background: linear-gradient(135deg, #fcd34d, #f59e0b); color:#111f4d; }
 .cta-gold:hover { background: linear-gradient(135deg, #fde68a, #fcd34d); }
 .section-alt { background: #f8f9fc; }
-[data-lang] { display: none; }
+[data-lang="id"] { display: none; }
 </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -590,9 +590,8 @@ tailwind.config = {
 let lang = 'en';
 
 function applyLang() {
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-  });
+  document.querySelectorAll('[data-lang="id"]').forEach(el => el.style.display = lang === 'id' ? '' : 'none');
+  document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
   document.getElementById('langBtn').textContent = lang === 'id' ? '🇬🇧 EN' : '🇮🇩 ID';
   document.getElementById('navCta').textContent = lang === 'id' ? 'Daftar →' : 'Enroll →';
   document.documentElement.lang = lang;
